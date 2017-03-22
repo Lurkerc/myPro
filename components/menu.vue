@@ -8,11 +8,20 @@
             </template>
             <!-- 路由 https://router.vuejs.org/zh-cn/api/router-link.html -->
             <ul class="ivu-menu">
-              <router-link class="ivu-menu-item" v-for="(cItem,cIndex) in item.children" :name="index + '-' + cIndex" :to="cItem.url" tag="li" active-class="ivu-menu-item-active ivu-menu-item-selected">{{ cItem.title }}</router-link>
+              <router-link class="ivu-menu-item" v-for="(cItem,cIndex) in item.children" :name="index + '-' + cIndex" :to="cItem.url" tag="li" active-class="ivu-menu-item-active ivu-menu-item-selected"><a>{{ cItem.title }}</a></router-link>
             </ul>
         </Submenu>
     </Menu>
 </template>
+
+<style lang="less">
+  .ivu-menu-item{
+    &.ivu-menu-item-selected,&:hover{
+      a{color: #fff;}
+    }
+    a{color: #9ea7b4;display: block;}
+  }
+</style>
 
 <script>
   export default {
